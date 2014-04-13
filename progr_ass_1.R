@@ -60,10 +60,10 @@ test <- data.frame(test_subject,test_y,test_mean,test_std)             # combine
 head(test)                                                             # view new data frame
 rm(test_subject,test_x,test_y,column_names,test_mean,test_std)         # remove unused df
 
-train <- train[,-grep("meanFreq",names(train))]                        # remove meanfreq
+train <- train[,-grep("meanFreq",names(train))]                        # remove meanfreq from train df
 head(train)                                                            # view 
 
-test <- test[,-grep("meanFreq",names(test))]                           # remove meanfreq
+test <- test[,-grep("meanFreq",names(test))]                           # remove meanfreq from test df
 head(test)
 
 ### combine into 1 data.frame
@@ -71,6 +71,9 @@ merged <- rbind(test,train)
 rm(test,train,features)                                                # remove unused df
 
 ### Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
-library(data.table)
-DT <- data.table(merged,key=c("subject","activity"))
-DT[]
+library(plyr)
+library(reshape2)
+
+melted <- melt(merged, id.vars=c("subject","activity"))                # melt df to use acast
+tidy_data <- data.frame(acast(melted, subject~activity, mean))         # acast to get the average of subj and activ
+                                                                       # used data.frame to put into a df.
