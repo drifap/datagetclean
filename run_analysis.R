@@ -1,6 +1,6 @@
 ### Get colNames for X data -------------------------------------------------------------------------------------
 
-column_names <- read.table("UCI HAR Dataset/features.txt")                           # read in features.txt
+column_names <- read.table("UCI HAR Dataset/features.txt")                # read in features.txt
 features<- as.character(column_names[,2])                                 # factor into character and into list
 rm(column_names)                                                          # remove unused df
 
