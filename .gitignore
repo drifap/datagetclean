@@ -1,3 +1,8 @@
 .Rproj.user
 .Rhistory
 .RData
+.csv
+.html
+.txt
+/data
+tidy_data.csv
