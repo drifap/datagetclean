@@ -15,7 +15,7 @@ Running this script will do the following:
  4. Appropriately labels the data set with descriptive activity names. 
  5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject
 
-#### CodeBook.md
+#### [CodeBook.md] (https://github.com/drifap/datagetclean/blob/master/CodeBook.md)
 This file describes the variables, the data, and any transformations or work that you performed to clean up the data. More information also available from [here](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones)
 
 
