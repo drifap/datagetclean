@@ -1,4 +1,4 @@
-Codebook for assignment 1
+Codebook
 ===============================
 
 #### My notes: 
