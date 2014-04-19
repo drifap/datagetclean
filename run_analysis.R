@@ -1,15 +1,15 @@
 ### Get colNames for X data -------------------------------------------------------------------------------------
 
-column_names <- read.table("data/features.txt")                           # read in features.txt
+column_names <- read.table("UCI HAR Dataset/features.txt")                           # read in features.txt
 features<- as.character(column_names[,2])                                 # factor into character and into list
 rm(column_names)                                                          # remove unused df
 
 
 ### Read in training set data and tidy up ------------------------------------------------------------------------
 
-train_x <- read.table("data/X_train.txt",header=F,col.names=features)     # Read in x & name columns
-train_y <- read.table("data/y_train.txt",header=F,col.names="activity")   # read in y & name columns
-train_subject <- read.table("data/subject_train.txt",header=F,
+train_x <- read.table("UCI HAR Dataset/train/X_train.txt",header=F,col.names=features)     # Read in x & name columns
+train_y <- read.table("UCI HAR Dataset/train/y_train.txt",header=F,col.names="activity")   # read in y & name columns
+train_subject <- read.table("UCI HAR Dataset/train/subject_train.txt",header=F,
                             col.names="subject")                          # read in subject & name col
 
 train_mean <- subset(train_x,                                             # extract mean columns from data
@@ -29,9 +29,9 @@ rm(train_subject,train_x,train_y,train_mean,train_std)                    # remo
 
 ### Read in testing set data and tidy up ---------------------------------------------------------------------------
 
-test_x <- read.table("data/X_test.txt",header=F,col.names=features)       # Read in x & name col
-test_y <- read.table("data/y_test.txt",header=F,col.names="activity")     # read in y & name col
-test_subject <- read.table("data/subject_test.txt",header=F,
+test_x <- read.table("UCI HAR Dataset/test/X_test.txt",header=F,col.names=features)       # Read in x & name col
+test_y <- read.table("UCI HAR Dataset/test/y_test.txt",header=F,col.names="activity")     # read in y & name col
+test_subject <- read.table("UCI HAR Dataset/test/subject_test.txt",header=F,
                            col.names="subject")                           # read in subject & name col
 
 test_mean <- subset(test_x,                                               # extract mean columns from data
